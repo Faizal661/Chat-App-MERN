@@ -8,7 +8,10 @@ import { connectDB } from './lib/db.js'
 
 const app = express()
 
+
 const PORT = process.env.PORT || 3333
+
+app.use(express.json())
 
 app.use('/api/auth', authRoutes)
 
@@ -16,4 +19,3 @@ app.listen(PORT, () => {
     console.log('Server is started on port :',PORT)
     connectDB()
 })
-
